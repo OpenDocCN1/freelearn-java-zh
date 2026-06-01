@@ -69,21 +69,9 @@ IDE 将为我们生成空测试类。
 
     ```java
     @DBRider
-    ```
-
-    ```java
     @DBUnit(caseSensitiveTableNames = true,
-    ```
-
-    ```java
             caseInsensitiveStrategy= Orthography.LOWERCASE)
-    ```
-
-    ```java
     public class WordRepositoryPostgresTest {
-    ```
-
-    ```java
     }
     ```
 
@@ -93,13 +81,7 @@ IDE 将为我们生成空测试类。
 
     ```java
         @Test
-    ```
-
-    ```java
         void fetchesWord()  {
-    ```
-
-    ```java
         }
     ```
 
@@ -113,25 +95,10 @@ IDE 将为我们生成空测试类。
 
     ```java
     @DBRider
-    ```
-
-    ```java
     public class WordRepositoryPostgresTest {
-    ```
-
-    ```java
         private DataSource dataSource;
-    ```
-
-    ```java
         private final ConnectionHolder connectionHolder
-    ```
-
-    ```java
                     = () -> dataSource.getConnection();
-    ```
-
-    ```java
     }
     ```
 
@@ -145,41 +112,14 @@ IDE 将为我们生成空测试类。
 
     ```java
         @BeforeEach
-    ```
-
-    ```java
         void setupConnection() {
-    ```
-
-    ```java
             var ds = new PGSimpleDataSource();
-    ```
-
-    ```java
             ds.setServerNames(new String[]{"localhost"});
-    ```
-
-    ```java
             ds.setDatabaseName("wordzdb");
-    ```
-
-    ```java
             ds.setCurrentSchema("public");
-    ```
-
-    ```java
             ds.setUser("ciuser");
-    ```
-
-    ```java
             ds.setPassword("cipassword");
-    ```
-
-    ```java
             this.dataSource = ds;
-    ```
-
-    ```java
         }
     ```
 
@@ -229,21 +169,9 @@ IDE 将为我们生成空测试类。
 
     ```java
         @Test
-    ```
-
-    ```java
         public void fetchesWord()  {
-    ```
-
-    ```java
             String actual = "";
-    ```
-
-    ```java
             assertThat(actual).isEqualTo("ARISE");
-    ```
-
-    ```java
         }
     ```
 
@@ -253,29 +181,11 @@ IDE 将为我们生成空测试类。
 
     ```java
         @Test
-    ```
-
-    ```java
         public void fetchesWord()  {
-    ```
-
-    ```java
             WordRepository repository
-    ```
-
-    ```java
                      = new WordRepositoryPostgres();
-    ```
-
-    ```java
             String actual = "";
-    ```
-
-    ```java
             assertThat(actual).isEqualTo("ARISE");
-    ```
-
-    ```java
         }
     ```
 
@@ -299,41 +209,14 @@ public class WordRepositoryPostgres implements
 
     ```java
     public class WordRepositoryPostgres implements WordRepository {
-    ```
-
-    ```java
         @Override
-    ```
-
-    ```java
         public String fetchWordByNumber(int number) {
-    ```
-
-    ```java
             return null;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     @Override
-    ```
-
-    ```java
         public int highestWordNumber() {
-    ```
-
-    ```java
             return 0;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -341,33 +224,12 @@ public class WordRepositoryPostgres implements
 
     ```java
         @Test
-    ```
-
-    ```java
         public void fetchesWord()  {
-    ```
-
-    ```java
             WordRepository repository
-    ```
-
-    ```java
                         = new WordRepositoryPostgres();
-    ```
-
-    ```java
             String actual =
-    ```
-
-    ```java
                    repository.fetchWordByNumber(27);
-    ```
-
-    ```java
             assertThat(actual).isEqualTo("ARISE");
-    ```
-
-    ```java
         }
     ```
 
@@ -377,33 +239,12 @@ public class WordRepositoryPostgres implements
 
     ```java
         @Test
-    ```
-
-    ```java
         public void fetchesWord()  {
-    ```
-
-    ```java
             WordRepository repository
-    ```
-
-    ```java
                   = new
-    ```
-
-    ```java
                     WordRepositoryPostgres(dataSource);
-    ```
-
-    ```java
             String actual = adapter.fetchWordByNumber(27);
-    ```
-
-    ```java
             assertThat(actual).isEqualTo("ARISE");
-    ```
-
-    ```java
         }
     ```
 
@@ -419,33 +260,12 @@ public class WordRepositoryPostgres implements
 
     ```java
     {
-    ```
-
-    ```java
       "word": [
-    ```
-
-    ```java
         {
-    ```
-
-    ```java
           "word_number": 27,
-    ```
-
-    ```java
           "word": "ARISE"
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
       ]
-    ```
-
-    ```java
     }
     ```
 
@@ -461,37 +281,13 @@ public class WordRepositoryPostgres implements
 
     ```java
         @Test
-    ```
-
-    ```java
         @DataSet("adapters/data/wordTable.json")
-    ```
-
-    ```java
         public void fetchesWord()  {
-    ```
-
-    ```java
             WordRepository repository
-    ```
-
-    ```java
                 = new WordRepositoryPostgres(dataSource);
-    ```
-
-    ```java
             String actual =
-    ```
-
-    ```java
                         repository.fetchWordByNumber(27);
-    ```
-
-    ```java
             assertThat(actual).isEqualTo("ARISE");
-    ```
-
-    ```java
         }
     ```
 
@@ -517,9 +313,6 @@ public class WordRepositoryPostgres implements
 
     ```java
     create table word (word_number int primary key,
-    ```
-
-    ```java
     word char(5));
     ```
 
@@ -569,33 +362,12 @@ dependencies {
 
     ```java
     public class WordRepositoryPostgres
-    ```
-
-    ```java
                              implements WordRepository {
-    ```
-
-    ```java
         private final Jdbi jdbi;
-    ```
-
-    ```java
         public WordRepositoryPostgres(DataSource
-    ```
-
-    ```java
                                           dataSource){
-    ```
-
-    ```java
             jdbi = Jdbi.create(dataSource);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -605,13 +377,7 @@ dependencies {
 
     ```java
        private static final String SQL_FETCH_WORD_BY_NUMBER
-    ```
-
-    ```java
          = "select word from word where "
-    ```
-
-    ```java
                           + "word_number=:wordNumber";
     ```
 
@@ -619,41 +385,14 @@ dependencies {
 
     ```java
     @Override
-    ```
-
-    ```java
     public String fetchWordByNumber(int wordNumber) {
-    ```
-
-    ```java
         String word = jdbi.withHandle(handle -> {
-    ```
-
-    ```java
             var query =
-    ```
-
-    ```java
              handle.createQuery(SQL_FETCH_WORD_BY_NUMBER);
-    ```
-
-    ```java
             query.bind("wordNumber", wordNumber);
-    ```
-
-    ```java
             return query.mapTo(String.class).one();
-    ```
-
-    ```java
         });
-    ```
-
-    ```java
         return word;
-    ```
-
-    ```java
     }
     ```
 

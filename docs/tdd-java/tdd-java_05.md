@@ -303,21 +303,9 @@ public int hashCode() {
 
     ```java
     public class WordTest {
-    ```
-
-    ```java
         @Test
-    ```
-
-    ```java
         public void oneIncorrectLetter() {
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -327,17 +315,8 @@ public int hashCode() {
 
     ```java
     @Test
-    ```
-
-    ```java
     public void oneIncorrectLetter () {
-    ```
-
-    ```java
         new Word("A");
-    ```
-
-    ```java
     }
     ```
 
@@ -353,21 +332,9 @@ public int hashCode() {
 
     ```java
     public class Word {
-    ```
-
-    ```java
         public Word(String correctWord) {
-    ```
-
-    ```java
       // No Action
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -375,17 +342,8 @@ public int hashCode() {
 
     ```java
     @Test
-    ```
-
-    ```java
     public void oneIncorrectLetter () {
-    ```
-
-    ```java
         var word = new Word("A");
-    ```
-
-    ```java
     }
     ```
 
@@ -395,21 +353,9 @@ public int hashCode() {
 
     ```java
     @Test
-    ```
-
-    ```java
     public void oneIncorrectLetter () {
-    ```
-
-    ```java
         var word = new Word("A");
-    ```
-
-    ```java
         word.guess("Z");
-    ```
-
-    ```java
     }
     ```
 
@@ -423,9 +369,6 @@ public int hashCode() {
 
     ```java
     public void guess(String attempt) {
-    ```
-
-    ```java
     }
     ```
 
@@ -433,21 +376,9 @@ public int hashCode() {
 
     ```java
     @Test
-    ```
-
-    ```java
     public void oneIncorrectLetter () {
-    ```
-
-    ```java
         var word = new Word("A");
-    ```
-
-    ```java
         var score = word.guess("Z");
-    ```
-
-    ```java
     }
     ```
 
@@ -485,29 +416,11 @@ public int hashCode() {
 
     ```java
     @Test
-    ```
-
-    ```java
     public void oneIncorrectLetter() {
-    ```
-
-    ```java
         var word = new Word("A");
-    ```
-
-    ```java
         var score = word.guess("Z");
-    ```
-
-    ```java
         var result = score.letter(0);
-    ```
-
-    ```java
         assertThat(result).isEqualTo(Letter.INCORRECT);
-    ```
-
-    ```java
     }
     ```
 
@@ -521,37 +434,13 @@ public int hashCode() {
 
     ```java
     public class Word {
-    ```
-
-    ```java
         public Word(String correctWord) {
-    ```
-
-    ```java
             // Not Implemented
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         public Score guess(String attempt) {
-    ```
-
-    ```java
             var score = new Score();
-    ```
-
-    ```java
             return score;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -559,21 +448,9 @@ public int hashCode() {
 
     ```java
     public class Score {
-    ```
-
-    ```java
         public Letter letter(int position) {
-    ```
-
-    ```java
             return Letter.INCORRECT;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 

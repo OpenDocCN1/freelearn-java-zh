@@ -94,29 +94,11 @@
 
     ```java
     @Test
-    ```
-
-    ```java
     public void oneCorrectLetter() {
-    ```
-
-    ```java
        var word = new Word("A");
-    ```
-
-    ```java
        var score = word.guess("A");
-    ```
-
-    ```java
        assertThat(score.letter(0))
-    ```
-
-    ```java
           .isEqualTo(Letter.CORRECT);
-    ```
-
-    ```java
     }
     ```
 
@@ -128,45 +110,15 @@
 
     ```java
     public class Word {
-    ```
-
-    ```java
         private final String word;
-    ```
-
-    ```java
         public Word(String correctWord) {
-    ```
-
-    ```java
             this.word = correctWord;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         public Score guess(String attempt) {
-    ```
-
-    ```java
             var score = new Score(word);
-    ```
-
-    ```java
             score.assess( 0, attempt );
-    ```
-
-    ```java
             return score;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -224,41 +176,14 @@ public class Score {
 
     ```java
     public void assess(int position, String attempt) {
-    ```
-
-    ```java
         if (isCorrectLetter(position, attempt)){
-    ```
-
-    ```java
             result = Letter.CORRECT;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
-    ```
-
-    ```java
     private boolean isCorrectLetter(int position,
-    ```
-
-    ```java
                                     String attempt) {
-    ```
-
-    ```java
         return correct.charAt(position) ==
-    ```
-
-    ```java
                attempt.charAt(position);
-    ```
-
-    ```java
     }
     ```
 
@@ -298,77 +223,23 @@ private void assertScoreForLetter(Score score,
 
     ```java
     public class Score {
-    ```
-
-    ```java
         private final String correct;
-    ```
-
-    ```java
         private Letter result = Letter.INCORRECT ;
-    ```
-
-    ```java
         private int position;
-    ```
-
-    ```java
         public Score(String correct) {
-    ```
-
-    ```java
             this.correct = correct;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         public Letter letter(int position) {
-    ```
-
-    ```java
             return result;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         public void assess(String attempt) {
-    ```
-
-    ```java
             if (isCorrectLetter(attempt)){
-    ```
-
-    ```java
                 result = Letter.CORRECT;
-    ```
-
-    ```java
             }
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         private boolean isCorrectLetter(String attempt) {
-    ```
-
-    ```java
             return correct.charAt(position) == attempt.        charAt(position);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -386,29 +257,11 @@ private void assertScoreForLetter(Score score,
 
     ```java
     @Test
-    ```
-
-    ```java
     void secondLetterWrongPosition() {
-    ```
-
-    ```java
         var word = new Word("AR");
-    ```
-
-    ```java
         var score = word.guess("ZA");
-    ```
-
-    ```java
         assertScoreForLetter(score, 1,
-    ```
-
-    ```java
                              Letter.PART_CORRECT);
-    ```
-
-    ```java
     }
     ```
 
@@ -418,41 +271,14 @@ private void assertScoreForLetter(Score score,
 
     ```java
     public void assess(String attempt) {
-    ```
-
-    ```java
         for (char current: attempt.toCharArray()) {
-    ```
-
-    ```java
             if (isCorrectLetter(current)) {
-    ```
-
-    ```java
                 result = Letter.CORRECT;
-    ```
-
-    ```java
             }
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
-    ```
-
-    ```java
     private boolean isCorrectLetter(char currentLetter) {
-    ```
-
-    ```java
         return correct.charAt(position) == currentLetter;
-    ```
-
-    ```java
     }
     ```
 
@@ -464,53 +290,17 @@ private void assertScoreForLetter(Score score,
 
     ```java
     public void assess(String attempt) {
-    ```
-
-    ```java
         for (char current: attempt.toCharArray()) {
-    ```
-
-    ```java
             if (isCorrectLetter(current)) {
-    ```
-
-    ```java
                 result = Letter.CORRECT;
-    ```
-
-    ```java
             } else if (occursInWord(current)) {
-    ```
-
-    ```java
                 result = Letter.PART_CORRECT;
-    ```
-
-    ```java
             }
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
-    ```
-
-    ```java
         private boolean occursInWord(char current) {
-    ```
-
-    ```java
             return
-    ```
-
-    ```java
               correct.contains(String.valueOf(current));
-    ```
-
-    ```java
         }
     ```
 
@@ -524,37 +314,13 @@ private void assertScoreForLetter(Score score,
 
     ```java
     @Test
-    ```
-
-    ```java
     void allScoreCombinations() {
-    ```
-
-    ```java
         var word = new Word("ARI");
-    ```
-
-    ```java
         var score = word.guess("ZAI");
-    ```
-
-    ```java
         assertScoreForLetter(score, 0, Letter.INCORRECT);
-    ```
-
-    ```java
         assertScoreForLetter(score, 1,
-    ```
-
-    ```java
                              Letter.PART_CORRECT);
-    ```
-
-    ```java
         assertScoreForLetter(score, 2, Letter.CORRECT);
-    ```
-
-    ```java
     }
     ```
 
@@ -564,133 +330,37 @@ private void assertScoreForLetter(Score score,
 
     ```java
     public class Score {
-    ```
-
-    ```java
         private final String correct;
-    ```
-
-    ```java
         private final List<Letter> results =
-    ```
-
-    ```java
                                  new ArrayList<>();
-    ```
-
-    ```java
         private int position;
-    ```
-
-    ```java
         public Score(String correct) {
-    ```
-
-    ```java
             this.correct = correct;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         public Letter letter(int position) {
-    ```
-
-    ```java
             return results.get(position);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         public void assess(String attempt) {
-    ```
-
-    ```java
             for (char current: attempt.toCharArray()) {
-    ```
-
-    ```java
                 if (isCorrectLetter(current)) {
-    ```
-
-    ```java
                     results.add(Letter.CORRECT);
-    ```
-
-    ```java
                 } else if (occursInWord(current)) {
-    ```
-
-    ```java
     results.add(Letter.PART_CORRECT);
-    ```
-
-    ```java
                 } else {
-    ```
-
-    ```java
                     results.add(Letter.INCORRECT);
-    ```
-
-    ```java
                 }
-    ```
-
-    ```java
                 position++;
-    ```
-
-    ```java
             }
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         private boolean occursInWord(char current) {
-    ```
-
-    ```java
             return
-    ```
-
-    ```java
              correct.contains(String.valueOf(current));
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         private boolean isCorrectLetter(char
-    ```
-
-    ```java
           currentLetter) {
-    ```
-
-    ```java
             return correct.charAt(position) ==
-    ```
-
-    ```java
                      currentLetter;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -704,61 +374,19 @@ private void assertScoreForLetter(Score score,
 
     ```java
     public void assess(String attempt) {
-    ```
-
-    ```java
         for (char current: attempt.toCharArray()) {
-    ```
-
-    ```java
             results.add( scoreFor(current) );
-    ```
-
-    ```java
             position++;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
-    ```
-
-    ```java
     private Letter scoreFor(char current) {
-    ```
-
-    ```java
         if (isCorrectLetter(current)) {
-    ```
-
-    ```java
             return Letter.CORRECT;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         if (occursInWord(current)) {
-    ```
-
-    ```java
             return Letter.PART_CORRECT;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         return Letter.INCORRECT;
-    ```
-
-    ```java
     }
     ```
 
@@ -772,69 +400,21 @@ private void assertScoreForLetter(Score score,
 
     ```java
     @Test
-    ```
-
-    ```java
     void allScoreCombinations() {
-    ```
-
-    ```java
         var word = new Word("ARI");
-    ```
-
-    ```java
         var score = word.guess("ZAI");
-    ```
-
-    ```java
         assertScoreForGuess(score, INCORRECT,
-    ```
-
-    ```java
                                    PART_CORRECT,
-    ```
-
-    ```java
                                    CORRECT);
-    ```
-
-    ```java
     }
-    ```
-
-    ```java
     private void assertScoreForGuess(Score score, Letter…
-    ```
-
-    ```java
         for (int position=0;
-    ```
-
-    ```java
                  position < expectedScores.length;
-    ```
-
-    ```java
                  position++){
-    ```
-
-    ```java
             Letter expected = expectedScores[position];
-    ```
-
-    ```java
             assertThat(score.letter(position))
-    ```
-
-    ```java
                 .isEqualTo(expected);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -846,177 +426,48 @@ private void assertScoreForLetter(Score score,
 
     ```java
     package com.wordz.domain;
-    ```
-
-    ```java
     import org.junit.jupiter.api.Test;
-    ```
-
-    ```java
     import static com.wordz.domain.Letter.*;
-    ```
-
-    ```java
     import static org.assertj.core.api.Assertions.assertThat;
-    ```
-
-    ```java
     public class WordTest {
-    ```
-
-    ```java
         @Test
-    ```
-
-    ```java
         public void oneIncorrectLetter() {
-    ```
-
-    ```java
             var word = new Word("A");
-    ```
-
-    ```java
             var score = word.guess("Z");
-    ```
-
-    ```java
             assertScoreForGuess(score, INCORRECT);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         @Test
-    ```
-
-    ```java
         public void oneCorrectLetter() {
-    ```
-
-    ```java
             var word = new Word("A");
-    ```
-
-    ```java
             var score = word.guess("A");
-    ```
-
-    ```java
             assertScoreForGuess(score, CORRECT);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         @Test
-    ```
-
-    ```java
         public void secondLetterWrongPosition() {
-    ```
-
-    ```java
             var word = new Word("AR");
-    ```
-
-    ```java
             var score = word.guess("ZA");
-    ```
-
-    ```java
             assertScoreForGuess(score,  INCORRECT,
-    ```
-
-    ```java
                                         PART_CORRECT);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         @Test
-    ```
-
-    ```java
         public void allScoreCombinations() {
-    ```
-
-    ```java
             var word = new Word("ARI");
-    ```
-
-    ```java
             var score = word.guess("ZAI");
-    ```
-
-    ```java
             assertScoreForGuess(score,  INCORRECT,
-    ```
-
-    ```java
                                         PART_CORRECT,
-    ```
-
-    ```java
                                         CORRECT);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         private void assertScoreForGuess(Score score,
-    ```
-
-    ```java
             Letter... expectedScores) {
-    ```
-
-    ```java
             for (int position = 0;
-    ```
-
-    ```java
                   position < expectedScores.length;
-    ```
-
-    ```java
                   position++) {
-    ```
-
-    ```java
                 Letter expected =
-    ```
-
-    ```java
                         expectedScores[position];
-    ```
-
-    ```java
                 assertThat(score.letter(position))
-    ```
-
-    ```java
                         .isEqualTo(expected);
-    ```
-
-    ```java
             }
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 

@@ -82,13 +82,7 @@ implementation 'com.vtence.molecule:molecule:0.15.0'
 
     ```java
     package com.wordz.adapters.api;
-    ```
-
-    ```java
     public class WordzEndpointTest {
-    ```
-
-    ```java
     }
     ```
 
@@ -106,25 +100,10 @@ void startGame() {
 
     ```java
     @Test
-    ```
-
-    ```java
     void startGame() {
-    ```
-
-    ```java
         HttpResponse res;
-    ```
-
-    ```java
         assertThat(res)
-    ```
-
-    ```java
            .hasStatusCode(HttpStatus.NO_CONTENT.code);
-    ```
-
-    ```java
     }
     ```
 
@@ -132,41 +111,14 @@ void startGame() {
 
     ```java
     @Test
-    ```
-
-    ```java
     void startGame() throws IOException,
-    ```
-
-    ```java
                             InterruptedException {
-    ```
-
-    ```java
         var httpClient = HttpClient.newHttpClient();
-    ```
-
-    ```java
     HttpResponse res
-    ```
-
-    ```java
     = httpClient.send(req,
-    ```
-
-    ```java
                 HttpResponse.BodyHandlers.discarding());
-    ```
-
-    ```java
         assertThat(res)
-    ```
-
-    ```java
            .hasStatusCode(HttpStatus.NO_CONTENT.code);
-    ```
-
-    ```java
     }
     ```
 
@@ -174,69 +126,21 @@ void startGame() {
 
     ```java
     @Test
-    ```
-
-    ```java
     private static final Player PLAYER
-    ```
-
-    ```java
            = new Player("alan2112");
-    ```
-
-    ```java
     void startGame() throws IOException,
-    ```
-
-    ```java
                             InterruptedException {
-    ```
-
-    ```java
         var req = HttpRequest.newBuilder()
-    ```
-
-    ```java
            .uri(URI.create("htp://localhost:8080/start"))
-    ```
-
-    ```java
            .POST(HttpRequest.BodyPublishers
-    ```
-
-    ```java
                 .ofString(new Gson().toJson(PLAYER)))
-    ```
-
-    ```java
                 .build();
-    ```
-
-    ```java
         var httpClient = HttpClient.newHttpClient();
-    ```
-
-    ```java
         HttpResponse res
-    ```
-
-    ```java
             = httpClient.send(req,
-    ```
-
-    ```java
                 HttpResponse.BodyHandlers.discarding());
-    ```
-
-    ```java
         assertThat(res)
-    ```
-
-    ```java
            .hasStatusCode(HttpStatus.NO_CONTENT.code);
-    ```
-
-    ```java
     }
     ```
 
@@ -258,21 +162,9 @@ void startGame() {
 
     ```java
         @Test
-    ```
-
-    ```java
         void startGame() throws IOException,
-    ```
-
-    ```java
                                 InterruptedException {
-    ```
-
-    ```java
             var endpoint
-    ```
-
-    ```java
                = new WordzEndpoint("localhost", 8080);
     ```
 
@@ -282,21 +174,9 @@ void startGame() {
 
     ```java
     package com.wordz.adapters.api;
-    ```
-
-    ```java
     public class WordzEndpoint {
-    ```
-
-    ```java
         public WordzEndpoint(String host, int port) {
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -306,33 +186,12 @@ void startGame() {
 
     ```java
     package com.wordz.adapters.api;
-    ```
-
-    ```java
     import com.vtence.molecule.WebServer;
-    ```
-
-    ```java
     public class WordzEndpoint {
-    ```
-
-    ```java
         private final WebServer server;
-    ```
-
-    ```java
         public WordzEndpoint(String host, int port) {
-    ```
-
-    ```java
             server = WebServer.create(host, port);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -354,77 +213,23 @@ void startGame() {
 
     ```java
     public class WordzEndpoint {
-    ```
-
-    ```java
         private final WebServer server;
-    ```
-
-    ```java
         public WordzEndpoint(String host, int port) {
-    ```
-
-    ```java
             server = WebServer.create(host, port);
-    ```
-
-    ```java
             try {
-    ```
-
-    ```java
                 server.route(new Routes() {{
-    ```
-
-    ```java
                     post("/start")
-    ```
-
-    ```java
                       .to(request -> startGame(request));
-    ```
-
-    ```java
                 }});
-    ```
-
-    ```java
             } catch (IOException ioe) {
-    ```
-
-    ```java
                 throw new IllegaStateException(ioe);
-    ```
-
-    ```java
             }
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         private Response startGame(Request request) {
-    ```
-
-    ```java
             return Response
-    ```
-
-    ```java
                      .of(HttpStatus.NOT_IMPLEMENTED)
-    ```
-
-    ```java
                      .done();
-    ```
-
-    ```java
       }
-    ```
-
-    ```java
     }
     ```
 
@@ -444,41 +249,14 @@ void startGame() {
 
     ```java
     @ExtendWith(MockitoExtension.class)
-    ```
-
-    ```java
     public class WordzEndpointTest {
-    ```
-
-    ```java
         @Mock
-    ```
-
-    ```java
         private Wordz mockWordz;
-    ```
-
-    ```java
         @Test
-    ```
-
-    ```java
         void startGame() throws IOException,
-    ```
-
-    ```java
                                 InterruptedException {
-    ```
-
-    ```java
             var endpoint
-    ```
-
-    ```java
             = new WordzEndpoint(mockWordz,
-    ```
-
-    ```java
                                 "localhost", 8080);
     ```
 
@@ -486,25 +264,10 @@ void startGame() {
 
     ```java
     public class WordzEndpoint {
-    ```
-
-    ```java
         private final WebServer server;
-    ```
-
-    ```java
         private final Wordz wordz;
-    ```
-
-    ```java
         public WordzEndpoint(Wordz wordz,
-    ```
-
-    ```java
                              String host, int port) {
-    ```
-
-    ```java
             this.wordz = wordz;
     ```
 
@@ -512,73 +275,22 @@ void startGame() {
 
     ```java
     private Response startGame(Request request) {
-    ```
-
-    ```java
         try {
-    ```
-
-    ```java
             Player player
-    ```
-
-    ```java
                     = new Gson().fromJson(request.body(),
-    ```
-
-    ```java
                                           Player.class);
-    ```
-
-    ```java
             boolean isSuccessful = wordz.newGame(player);
-    ```
-
-    ```java
             if (isSuccessful) {
-    ```
-
-    ```java
                 return Response
-    ```
-
-    ```java
                         .of(HttpStatus.NO_CONTENT)
-    ```
-
-    ```java
                         .done();
-    ```
-
-    ```java
             }
-    ```
-
-    ```java
         } catch (IOException e) {
-    ```
-
-    ```java
             throw new RuntimeException(e);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         throw new
-    ```
-
-    ```java
            UnsupportedOperationException("Not
-    ```
-
-    ```java
                                          implemented");
-    ```
-
-    ```java
     }
     ```
 
@@ -594,33 +306,12 @@ void startGame() {
 
     ```java
        @Test
-    ```
-
-    ```java
     void startsGame() throws IOException,
-    ```
-
-    ```java
                              InterruptedException {
-    ```
-
-    ```java
         var endpoint
-    ```
-
-    ```java
              = new WordzEndpoint(mockWordz,
-    ```
-
-    ```java
                                  "localhost", 8080);
-    ```
-
-    ```java
         when(mockWordz.newGame(eq(PLAYER)))
-    ```
-
-    ```java
               .thenReturn(true);
     ```
 
@@ -689,53 +380,17 @@ public class WordzEndpointTest {
 
     ```java
         @Test
-    ```
-
-    ```java
         void rejectsRestart() throws Exception {
-    ```
-
-    ```java
             when(mockWordz.newGame(eq(player)))
-    ```
-
-    ```java
                              .thenReturn(false);
-    ```
-
-    ```java
             var req = requestBuilder("start")
-    ```
-
-    ```java
                     .POST(asJsonBody(player))
-    ```
-
-    ```java
                     .build();
-    ```
-
-    ```java
             var res
-    ```
-
-    ```java
                = httpClient.send(req,
-    ```
-
-    ```java
                     HttpResponse.BodyHandlers.discarding());
-    ```
-
-    ```java
             assertThat(res)
-    ```
-
-    ```java
                    .hasStatusCode(HttpStatus.CONFLICT.code);
-    ```
-
-    ```java
         }
     ```
 
@@ -749,73 +404,22 @@ public class WordzEndpointTest {
 
     ```java
     private Response startGame(Request request) {
-    ```
-
-    ```java
         try {
-    ```
-
-    ```java
             Player player
-    ```
-
-    ```java
                     = new Gson().fromJson(request.body(),
-    ```
-
-    ```java
                                           Player.class);
-    ```
-
-    ```java
             boolean isSuccessful = wordz.newGame(player);
-    ```
-
-    ```java
             if (isSuccessful) {
-    ```
-
-    ```java
                 return Response
-    ```
-
-    ```java
                         .of(HttpStatus.NO_CONTENT)
-    ```
-
-    ```java
                         .done();
-    ```
-
-    ```java
             }
-    ```
-
-    ```java
             return Response
-    ```
-
-    ```java
                     .of(HttpStatus.CONFLICT)
-    ```
-
-    ```java
                     .done();
-    ```
-
-    ```java
         } catch (IOException e) {
-    ```
-
-    ```java
             throw new RuntimeException(e);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -845,25 +449,10 @@ public class WordzEndpointTest {
 
     ```java
     @BeforeAll
-    ```
-
-    ```java
     void setUp() {
-    ```
-
-    ```java
         mockWordz = mock(Wordz.class);
-    ```
-
-    ```java
         endpoint = new WordzEndpoint(mockWordz,
-    ```
-
-    ```java
                                      "localhost", 8080);
-    ```
-
-    ```java
     }
     ```
 
@@ -881,81 +470,24 @@ public class WordzEndpointTest {
 
     ```java
     private Response startGame(Request request) {
-    ```
-
-    ```java
         try {
-    ```
-
-    ```java
             Player player = extractPlayer(request);
-    ```
-
-    ```java
             boolean isSuccessful = wordz.newGame(player);
-    ```
-
-    ```java
             HttpStatus status
-    ```
-
-    ```java
                     = isSuccessful?
-    ```
-
-    ```java
                         HttpStatus.NO_CONTENT :
-    ```
-
-    ```java
                         HttpStatus.CONFLICT;
-    ```
-
-    ```java
                 return Response
-    ```
-
-    ```java
                         .of(status)
-    ```
-
-    ```java
                         .done();
-    ```
-
-    ```java
         } catch (IOException e) {
-    ```
-
-    ```java
             throw new RuntimeException(e);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
-    ```
-
-    ```java
     private Player extractPlayer(Request request)
-    ```
-
-    ```java
                                      throws IOException {
-    ```
-
-    ```java
         return new Gson().fromJson(request.body(),
-    ```
-
-    ```java
                                    Player.class);
-    ```
-
-    ```java
     }
     ```
 
@@ -971,33 +503,12 @@ public class WordzEndpointTest {
 
     ```java
     @Test
-    ```
-
-    ```java
     void partiallyCorrectGuess() {
-    ```
-
-    ```java
         var score = new Score("-U---");
-    ```
-
-    ```java
         score.assess("GUESS");
-    ```
-
-    ```java
         var result = new GuessResult(score, false, false);
-    ```
-
-    ```java
         when(mockWordz.assess(eq(player), eq("GUESS")))
-    ```
-
-    ```java
                 .thenReturn(result);
-    ```
-
-    ```java
     }
     ```
 
@@ -1005,53 +516,17 @@ public class WordzEndpointTest {
 
     ```java
     @Test
-    ```
-
-    ```java
     void partiallyCorrectGuess() {
-    ```
-
-    ```java
         var score = new Score("-U---");
-    ```
-
-    ```java
         score.assess("GUESS");
-    ```
-
-    ```java
         var result = new GuessResult(score, false, false);
-    ```
-
-    ```java
         when(mockWordz.assess(eq(player), eq("GUESS")))
-    ```
-
-    ```java
                 .thenReturn(result);
-    ```
-
-    ```java
         var guessRequest = new GuessRequest(player, "-U---");
-    ```
-
-    ```java
         var body = new Gson().toJson(guessRequest);
-    ```
-
-    ```java
         var req = requestBuilder("guess")
-    ```
-
-    ```java
                 .POST(ofString(body))
-    ```
-
-    ```java
                 .build();
-    ```
-
-    ```java
     }
     ```
 
@@ -1059,17 +534,8 @@ public class WordzEndpointTest {
 
     ```java
     package com.wordz.adapters.api;
-    ```
-
-    ```java
     import com.wordz.domain.Player;
-    ```
-
-    ```java
     public record GuessRequest(Player player, String guess) {
-    ```
-
-    ```java
     }
     ```
 
@@ -1077,65 +543,20 @@ public class WordzEndpointTest {
 
     ```java
     @Test
-    ```
-
-    ```java
     void partiallyCorrectGuess() throws Exception {
-    ```
-
-    ```java
         var score = new Score("-U---");
-    ```
-
-    ```java
         score.assess("GUESS");
-    ```
-
-    ```java
         var result = new GuessResult(score, false, false);
-    ```
-
-    ```java
         when(mockWordz.assess(eq(player), eq("GUESS")))
-    ```
-
-    ```java
                 .thenReturn(result);
-    ```
-
-    ```java
         var guessRequest = new GuessRequest(player, "-U---");
-    ```
-
-    ```java
         var body = new Gson().toJson(guessRequest);
-    ```
-
-    ```java
         var req = requestBuilder("guess")
-    ```
-
-    ```java
                 .POST(ofString(body))
-    ```
-
-    ```java
                 .build();
-    ```
-
-    ```java
         var res
-    ```
-
-    ```java
            = httpClient.send(req,
-    ```
-
-    ```java
                 HttpResponse.BodyHandlers.ofString());
-    ```
-
-    ```java
     }
     ```
 
@@ -1143,105 +564,30 @@ public class WordzEndpointTest {
 
     ```java
     @Test
-    ```
-
-    ```java
     void partiallyCorrectGuess() throws Exception {
-    ```
-
-    ```java
         var score = new Score("-U--G");
-    ```
-
-    ```java
         score.assess("GUESS");
-    ```
-
-    ```java
         var result = new GuessResult(score, false, false);
-    ```
-
-    ```java
         when(mockWordz.assess(eq(player), eq("GUESS")))
-    ```
-
-    ```java
                 .thenReturn(result);
-    ```
-
-    ```java
         var guessRequest = new GuessRequest(player,
-    ```
-
-    ```java
                                             "-U--G");
-    ```
-
-    ```java
         var body = new Gson().toJson(guessRequest);
-    ```
-
-    ```java
         var req = requestBuilder("guess")
-    ```
-
-    ```java
                 .POST(ofString(body))
-    ```
-
-    ```java
                 .build();
-    ```
-
-    ```java
         var res
-    ```
-
-    ```java
            = httpClient.send(req,
-    ```
-
-    ```java
                 HttpResponse.BodyHandlers.ofString());
-    ```
-
-    ```java
         var response
-    ```
-
-    ```java
            = new Gson().fromJson(res.body(),
-    ```
-
-    ```java
                              GuessHttpResponse.class);
-    ```
-
-    ```java
         // Key to letters in scores():
-    ```
-
-    ```java
         // C correct, P part correct, X incorrect
-    ```
-
-    ```java
         Assertions.assertThat(response.scores())
-    ```
-
-    ```java
             .isEqualTo("PCXXX");
-    ```
-
-    ```java
         Assertions.assertThat(response.isGameOver())
-    ```
-
-    ```java
     .isFalse();
-    ```
-
-    ```java
     }
     ```
 
@@ -1251,17 +597,8 @@ public class WordzEndpointTest {
 
     ```java
     package com.wordz.adapters.api;
-    ```
-
-    ```java
     public record GuessHttpResponse(String scores,
-    ```
-
-    ```java
                                     boolean isGameOver) {
-    ```
-
-    ```java
     }
     ```
 
@@ -1269,49 +606,16 @@ public class WordzEndpointTest {
 
     ```java
     public WordzEndpoint(Wordz wordz, String host,
-    ```
-
-    ```java
                          int port) {
-    ```
-
-    ```java
         this.wordz = wordz;
-    ```
-
-    ```java
         server = WebServer.create(host, port);
-    ```
-
-    ```java
         try {
-    ```
-
-    ```java
             server.route(new Routes() {{
-    ```
-
-    ```java
                 post("/start")
-    ```
-
-    ```java
                     .to(request -> startGame(request));
-    ```
-
-    ```java
                 post("/guess")
-    ```
-
-    ```java
                     .to(request -> guessWord(request));
-    ```
-
-    ```java
             }});
-    ```
-
-    ```java
         } catch (IOException e) {
     ```
 

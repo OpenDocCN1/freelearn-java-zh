@@ -54,13 +54,7 @@
 
     ```java
     package com.wordz.domain;
-    ```
-
-    ```java
     public class NewGameTest {
-    ```
-
-    ```java
     }
     ```
 
@@ -68,25 +62,10 @@
 
     ```java
     package com.wordz.domain;
-    ```
-
-    ```java
     public class NewGameTest {
-    ```
-
-    ```java
         void startsNewGame() {
-    ```
-
-    ```java
             var game = new Game();
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -104,33 +83,12 @@ public class Game {
 
     ```java
     public class NewGameTest {
-    ```
-
-    ```java
         @Test
-    ```
-
-    ```java
         void startsNewGame() {
-    ```
-
-    ```java
             var game = new Game();
-    ```
-
-    ```java
             var player = new Player();
-    ```
-
-    ```java
             game.start(player);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -169,33 +127,12 @@ public class Game {
 
     ```java
     public class NewGameTest {
-    ```
-
-    ```java
         @Test
-    ```
-
-    ```java
         void startsNewGame() {
-    ```
-
-    ```java
             var wordz = new Wordz();
-    ```
-
-    ```java
             var player = new Player();
-    ```
-
-    ```java
             wordz.start(player);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -212,33 +149,12 @@ public class Wordz {
 
     ```java
     public class NewGameTest {
-    ```
-
-    ```java
         @Test
-    ```
-
-    ```java
         void startsNewGame() {
-    ```
-
-    ```java
             var wordz = new Wordz();
-    ```
-
-    ```java
             var player = new Player();
-    ```
-
-    ```java
             wordz.newGame(player);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -248,69 +164,21 @@ public class Wordz {
 
     ```java
     package com.wordz.domain;
-    ```
-
-    ```java
     import org.junit.jupiter.api.Test;
-    ```
-
-    ```java
     import org.junit.jupiter.api.extension.ExtendWith;
-    ```
-
-    ```java
     import org.mockito.Mock;
-    ```
-
-    ```java
     import org.mockito.junit.jupiter.MockitoExtension;
-    ```
-
-    ```java
     @ExtendWith(MockitoExtension.class)
-    ```
-
-    ```java
     public class NewGameTest {
-    ```
-
-    ```java
         @Mock
-    ```
-
-    ```java
         private GameRepository gameRepository;
-    ```
-
-    ```java
         @InjectMocks
-    ```
-
-    ```java
         private Wordz wordz;
-    ```
-
-    ```java
         @Test
-    ```
-
-    ```java
         void startsNewGame() {
-    ```
-
-    ```java
             var player = new Player();
-    ```
-
-    ```java
             wordz.newGame(player);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -320,13 +188,7 @@ public class Wordz {
 
     ```java
     package com.wordz.domain;
-    ```
-
-    ```java
     public interface GameRepository {
-    ```
-
-    ```java
     }
     ```
 
@@ -334,69 +196,21 @@ public class Wordz {
 
     ```java
     public class NewGameTest {
-    ```
-
-    ```java
         @Mock
-    ```
-
-    ```java
         private GameRepository gameRepository;
-    ```
-
-    ```java
         @Test
-    ```
-
-    ```java
         void startsNewGame() {
-    ```
-
-    ```java
             var player = new Player();
-    ```
-
-    ```java
             wordz.newGame(player);
-    ```
-
-    ```java
             var gameArgument =
-    ```
-
-    ```java
                    ArgumentCaptor.forClass(Game.class)
-    ```
-
-    ```java
             verify(gameRepository)
-    ```
-
-    ```java
                .create(gameArgument.capture());
-    ```
-
-    ```java
             var game = gameArgument.getValue();
-    ```
-
-    ```java
             assertThat(game.getWord()).isEqualTo("ARISE");
-    ```
-
-    ```java
             assertThat(game.getAttemptNumber()).isZero();
-    ```
-
-    ```java
             assertThat(game.getPlayer()).isSameAs(player);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -422,45 +236,15 @@ public class Wordz {
 
     ```java
     package com.wordz.domain;
-    ```
-
-    ```java
     public class Wordz {
-    ```
-
-    ```java
         private final GameRepository gameRepository;
-    ```
-
-    ```java
         public Wordz(GameRepository gr) {
-    ```
-
-    ```java
             this.gameRepository = gr;
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         public void newGame(Player player) {
-    ```
-
-    ```java
             var game = new Game(player, "ARISE", 0);
-    ```
-
-    ```java
             gameRepository.create(game);
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
     }
     ```
 
@@ -476,65 +260,20 @@ public class Wordz {
 
     ```java
     @Test
-    ```
-
-    ```java
     void startsNewGame() {
-    ```
-
-    ```java
         var player = new Player();
-    ```
-
-    ```java
         wordz.newGame(player);
-    ```
-
-    ```java
         Game game = getGameInRepository();
-    ```
-
-    ```java
         assertThat(game.getWord()).isEqualTo("ARISE");
-    ```
-
-    ```java
         assertThat(game.getAttemptNumber()).isZero();
-    ```
-
-    ```java
         assertThat(game.getPlayer()).isSameAs(player);
-    ```
-
-    ```java
     }
-    ```
-
-    ```java
     private Game getGameInRepository() {
-    ```
-
-    ```java
         var gameArgument
-    ```
-
-    ```java
            = ArgumentCaptor.forClass(Game.class)
-    ```
-
-    ```java
         verify(gameRepository)
-    ```
-
-    ```java
                 .create(gameArgument.capture());
-    ```
-
-    ```java
         return gameArgument.getValue();
-    ```
-
-    ```java
     }
     ```
 
@@ -552,13 +291,7 @@ public class Wordz {
 
     ```java
         @Test
-    ```
-
-    ```java
         void selectsRandomWord() {
-    ```
-
-    ```java
         }
     ```
 
@@ -566,41 +299,14 @@ public class Wordz {
 
     ```java
     @ExtendWith(MockitoExtension.class)
-    ```
-
-    ```java
     public class NewGameTest {
-    ```
-
-    ```java
         @Mock
-    ```
-
-    ```java
         private GameRepository gameRepository;
-    ```
-
-    ```java
         @Mock
-    ```
-
-    ```java
         private WordRepository wordRepository ;
-    ```
-
-    ```java
         @Mock
-    ```
-
-    ```java
         private RandomNumbers randomNumbers ;
-    ```
-
-    ```java
         @InjectMocks
-    ```
-
-    ```java
         private Wordz wordz;
     ```
 
@@ -610,37 +316,13 @@ public class Wordz {
 
     ```java
     public class Wordz {
-    ```
-
-    ```java
         private final GameRepository gameRepository;
-    ```
-
-    ```java
         private final WordSelection wordSelection ;
-    ```
-
-    ```java
         public Wordz(GameRepository gr,
-    ```
-
-    ```java
                      WordRepository wr,
-    ```
-
-    ```java
                      RandomNumbers rn) {
-    ```
-
-    ```java
             this.gameRepository = gr;
-    ```
-
-    ```java
             this.wordSelection = new WordSelection(wr, rn);
-    ```
-
-    ```java
         }
     ```
 
@@ -650,25 +332,10 @@ public class Wordz {
 
     ```java
         @Test
-    ```
-
-    ```java
         void selectsRandomWord() {
-    ```
-
-    ```java
             when(randomNumbers.next(anyInt())).thenReturn(2);
-    ```
-
-    ```java
             when(wordRepository.fetchWordByNumber(2))
-    ```
-
-    ```java
                    .thenReturn("ABCDE");
-    ```
-
-    ```java
         }
     ```
 
@@ -690,49 +357,16 @@ public class Wordz {
 
     ```java
         @Test
-    ```
-
-    ```java
         void selectsRandomWord() {
-    ```
-
-    ```java
             givenWordToSelect("ABCDE");
-    ```
-
-    ```java
         }
-    ```
-
-    ```java
         private void givenWordToSelect(String wordToSelect){
-    ```
-
-    ```java
             int wordNumber = 2;
-    ```
-
-    ```java
             when(randomNumbers.next(anyInt()))
-    ```
-
-    ```java
                     .thenReturn(wordNumber);
-    ```
-
-    ```java
             when(wordRepository
-    ```
-
-    ```java
                     .fetchWordByNumber(wordNumber))
-    ```
-
-    ```java
                     .thenReturn(wordToSelect);
-    ```
-
-    ```java
         }
     ```
 
@@ -740,33 +374,12 @@ public class Wordz {
 
     ```java
     @Test
-    ```
-
-    ```java
     void selectsRandomWord() {
-    ```
-
-    ```java
         givenWordToSelect("ABCDE");
-    ```
-
-    ```java
         var player = new Player();
-    ```
-
-    ```java
         wordz.newGame(player);
-    ```
-
-    ```java
         Game game = getGameInRepository();
-    ```
-
-    ```java
         assertThat(game.getWord()).isEqualTo("ABCDE");
-    ```
-
-    ```java
     }
     ```
 
@@ -776,21 +389,9 @@ public class Wordz {
 
     ```java
     public void newGame(Player player) {
-    ```
-
-    ```java
         var word = wordSelection.chooseRandomWord();
-    ```
-
-    ```java
         Game game = new Game(player, word, 0);
-    ```
-
-    ```java
         gameRepository.create(game);
-    ```
-
-    ```java
     }
     ```
 
@@ -806,41 +407,14 @@ public class Wordz {
 
     ```java
     @Test
-    ```
-
-    ```java
     void startsNewGame() {
-    ```
-
-    ```java
         var player = new Player();
-    ```
-
-    ```java
         givenWordToSelect("ARISE");
-    ```
-
-    ```java
         wordz.newGame(player);
-    ```
-
-    ```java
         Game game = getGameInRepository();
-    ```
-
-    ```java
         assertThat(game.getWord()).isEqualTo("ARISE");
-    ```
-
-    ```java
         assertThat(game.getAttemptNumber()).isZero();
-    ```
-
-    ```java
         assertThat(game.getPlayer()).isSameAs(player);
-    ```
-
-    ```java
     }
     ```
 
@@ -972,57 +546,18 @@ public GuessResult assess(Player player, String guess) {
 
     ```java
     @Test
-    ```
-
-    ```java
     void updatesAttemptNumber() {
-    ```
-
-    ```java
         givenGameInRepository(
-    ```
-
-    ```java
                    Game.create(PLAYER, CORRECT_WORD));
-    ```
-
-    ```java
         wordz.assess(PLAYER, WRONG_WORD);
-    ```
-
-    ```java
         var game = getUpdatedGameInRepository();
-    ```
-
-    ```java
         assertThat(game.getAttemptNumber()).isEqualTo(1);
-    ```
-
-    ```java
     }
-    ```
-
-    ```java
     private Game getUpdatedGameInRepository() {
-    ```
-
-    ```java
         ArgumentCaptor<Game> argument
-    ```
-
-    ```java
                 = ArgumentCaptor.forClass(Game.class);
-    ```
-
-    ```java
         verify(gameRepository).update(argument.capture());
-    ```
-
-    ```java
         return argument.getValue();
-    ```
-
-    ```java
     }
     ```
 
@@ -1032,25 +567,10 @@ public GuessResult assess(Player player, String guess) {
 
     ```java
     package com.wordz.domain;
-    ```
-
-    ```java
     public interface GameRepository {
-    ```
-
-    ```java
         void create(Game game);
-    ```
-
-    ```java
         Game fetchForPlayer(Player player);
-    ```
-
-    ```java
         void update(Game game);
-    ```
-
-    ```java
     }
     ```
 
@@ -1058,33 +578,12 @@ public GuessResult assess(Player player, String guess) {
 
     ```java
     public GuessResult assess(Player player, String guess) {
-    ```
-
-    ```java
         var game = gameRepository.fetchForPlayer(player);
-    ```
-
-    ```java
         game.incrementAttemptNumber();
-    ```
-
-    ```java
         gameRepository.update(game);
-    ```
-
-    ```java
         var target = new Word(game.getWord());
-    ```
-
-    ```java
         var score = target.guess(guess);
-    ```
-
-    ```java
         return new GuessResult(score, false);
-    ```
-
-    ```java
     }
     ```
 
@@ -1092,13 +591,7 @@ public GuessResult assess(Player player, String guess) {
 
     ```java
     public void incrementAttemptNumber() {
-    ```
-
-    ```java
         attemptNumber++;
-    ```
-
-    ```java
     }
     ```
 
@@ -1112,25 +605,10 @@ public GuessResult assess(Player player, String guess) {
 
     ```java
     public GuessResult assess(Player player, String guess) {
-    ```
-
-    ```java
         var game = gameRepository.fetchForPlayer(player);
-    ```
-
-    ```java
         Score score = game.attempt( guess );
-    ```
-
-    ```java
         gameRepository.update(game);
-    ```
-
-    ```java
         return new GuessResult(score, false);
-    ```
-
-    ```java
     }
     ```
 

@@ -1,6 +1,6 @@
 # JBoss EAP6 高可用指南
 
-> 原文：[`zh.annas-archive.org/md5/d6bb48b9e141c33ca552b41e5089b7de`](https://zh.annas-archive.org/md5/d6bb48b9e141c33ca552b41e5089b7de)
+> 原文：[JBoss EAP6 high availability : leverage the power of JBoss EAP6 to successfully build high-availability clusters quickly and efficiently](https://zh.annas-archive.gl/md5/d6bb48b9e141c33ca552b41e5089b7de)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

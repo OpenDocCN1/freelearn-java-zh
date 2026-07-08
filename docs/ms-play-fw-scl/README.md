@@ -1,6 +1,6 @@
 # 精通 Scala Play 框架
 
-> 原文：[`zh.annas-archive.org/md5/079c5d0ec77661c34a79029f5b3207aa`](https://zh.annas-archive.org/md5/079c5d0ec77661c34a79029f5b3207aa)
+> 原文：[Mastering Play Framework for Scala : Leverage the Awesome Features of Play Framework to Build Scalable, Resilient, and Responsive Applications](https://zh.annas-archive.gl/md5/079c5d0ec77661c34a79029f5b3207aa)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

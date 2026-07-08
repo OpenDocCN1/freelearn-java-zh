@@ -1,6 +1,6 @@
 # 我的世界服务器 MOD 构建指南
 
-> 原文：[`zh.annas-archive.org/md5/339e027e61a63a7d942d79525e01cbdb`](https://zh.annas-archive.org/md5/339e027e61a63a7d942d79525e01cbdb)
+> 原文：[Building Minecraft Server Modifications - Second Edition](https://zh.annas-archive.gl/md5/339e027e61a63a7d942d79525e01cbdb)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

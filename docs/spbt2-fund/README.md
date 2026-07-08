@@ -1,6 +1,6 @@
 # SpringBoot2 基础知识
 
-> 原文：[`zh.annas-archive.org/md5/f68e33b69ce45f75289f3e293b634f8b`](https://zh.annas-archive.org/md5/f68e33b69ce45f75289f3e293b634f8b)
+> 原文：[Spring Boot 2 fundamentals : build and deploy production-ready microservices within the Java ecosystem](https://zh.annas-archive.gl/md5/f68e33b69ce45f75289f3e293b634f8b)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

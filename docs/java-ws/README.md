@@ -1,6 +1,6 @@
 # Java 研讨会
 
-> 原文：[`zh.annas-archive.org/md5/7e98199e364866427216662d687c9e02`](https://zh.annas-archive.org/md5/7e98199e364866427216662d687c9e02)
+> 原文：[The Java Workshop](https://zh.annas-archive.gl/md5/7e98199e364866427216662d687c9e02)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

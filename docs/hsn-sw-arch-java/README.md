@@ -1,6 +1,6 @@
 # Java 软件架构实用指南
 
-> 原文：[`zh.annas-archive.org/md5/93506f6fb2b3175b81858fd116153f7e`](https://zh.annas-archive.org/md5/93506f6fb2b3175b81858fd116153f7e)
+> 原文：[Hands-On Software Architecture with Java : Learn Key Architectural Techniques and Strategies to Design Efficient and Elegant Java Applications](https://zh.annas-archive.gl/md5/93506f6fb2b3175b81858fd116153f7e)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

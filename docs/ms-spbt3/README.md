@@ -1,6 +1,6 @@
 # 精通 SpringBoot3
 
-> 原文：[`zh.annas-archive.org/md5/40d9612ff55dffe4043960172afdfd1e`](https://zh.annas-archive.org/md5/40d9612ff55dffe4043960172afdfd1e)
+> 原文：[Mastering Spring Boot 3.0 : A Comprehensive Guide to Building Scalable and Efficient Backend Systems with Java and Spring](https://zh.annas-archive.gl/md5/40d9612ff55dffe4043960172afdfd1e)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

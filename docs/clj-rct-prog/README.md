@@ -1,6 +1,6 @@
 # Clojure 反应式编程
 
-> 原文：[`zh.annas-archive.org/md5/6145835f49fb455f54fc86ddacf97c6f`](https://zh.annas-archive.org/md5/6145835f49fb455f54fc86ddacf97c6f)
+> 原文：[Clojure Reactive Programming](https://zh.annas-archive.gl/md5/6145835f49fb455f54fc86ddacf97c6f)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

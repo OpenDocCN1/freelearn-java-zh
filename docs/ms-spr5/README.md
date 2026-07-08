@@ -1,6 +1,6 @@
 # 精通 Spring5
 
-> 原文：[`zh.annas-archive.org/md5/73290E1F786F5BAA832E07A902070E3F`](https://zh.annas-archive.org/md5/73290E1F786F5BAA832E07A902070E3F)
+> 原文：[Mastering Spring 5.0 : Develop Cloud Native Applications with Microservices Using Spring Boot, Spring Cloud, and Spring Cloud Data Flow](https://zh.annas-archive.gl/md5/73290E1F786F5BAA832E07A902070E3F)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

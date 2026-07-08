@@ -1,6 +1,6 @@
 # Java 代码面试完全指南
 
-> 原文：[`zh.annas-archive.org/md5/2AD78A4D85DC7F13AC021B920EE60C36`](https://zh.annas-archive.org/md5/2AD78A4D85DC7F13AC021B920EE60C36)
+> 原文：[The Complete Coding Interview Guide in Java: An effective guide for aspiring Java developers to ace their programming interviews](https://zh.annas-archive.gl/md5/2AD78A4D85DC7F13AC021B920EE60C36)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

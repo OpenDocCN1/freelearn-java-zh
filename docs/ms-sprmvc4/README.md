@@ -1,6 +1,6 @@
 # 精通 SpringMVC4
 
-> 原文：[`zh.annas-archive.org/md5/cc25428c0d0afda326c59aa81d555968`](https://zh.annas-archive.org/md5/cc25428c0d0afda326c59aa81d555968)
+> 原文：[Mastering Spring MVC 4 : gain expertise in designing real-world web applications using the Spring MVC framework](https://zh.annas-archive.gl/md5/cc25428c0d0afda326c59aa81d555968)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

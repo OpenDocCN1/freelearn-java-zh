@@ -1,6 +1,6 @@
 # Java11 和 12 新特性指南
 
-> 原文：[`zh.annas-archive.org/md5/ceccff69d2ebf68b979e5c5563cc96be`](https://zh.annas-archive.org/md5/ceccff69d2ebf68b979e5c5563cc96be)
+> 原文：[Java 11 and 12 – New Features : Learn About Project Amber and the Latest Developments in the Java Language and Platform](https://zh.annas-archive.gl/md5/ceccff69d2ebf68b979e5c5563cc96be)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

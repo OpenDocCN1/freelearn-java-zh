@@ -1,6 +1,6 @@
 # SpringBatch 精要
 
-> 原文：[`zh.annas-archive.org/md5/0fe2dd5fae2f276a4e88e006109c4f2b`](https://zh.annas-archive.org/md5/0fe2dd5fae2f276a4e88e006109c4f2b)
+> 原文：[Spring Batch essentials : design, develop, and deliver robust batch applications with the power of the Spring Batch framework](https://zh.annas-archive.gl/md5/0fe2dd5fae2f276a4e88e006109c4f2b)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

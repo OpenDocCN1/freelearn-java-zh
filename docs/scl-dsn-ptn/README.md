@@ -1,6 +1,6 @@
 # Scala 设计模式
 
-> 原文：[`zh.annas-archive.org/md5/483c7d8caeecdab1dabbbc736910bbe2`](https://zh.annas-archive.org/md5/483c7d8caeecdab1dabbbc736910bbe2)
+> 原文：[Hands-On Reactive Programming with Reactor : Build Reactive and Scalable Microservices Using the Reactor Framework](https://zh.annas-archive.gl/md5/483c7d8caeecdab1dabbbc736910bbe2)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

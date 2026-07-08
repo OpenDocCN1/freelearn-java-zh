@@ -1,6 +1,6 @@
 # Java 重构指南
 
-> 原文：[`zh.annas-archive.org/md5/82218de9291cfc215132168650b38ffa`](https://zh.annas-archive.org/md5/82218de9291cfc215132168650b38ffa)
+> 原文：[Refactoring in Java : Improving Code Design and Maintainability for Java Developers](https://zh.annas-archive.gl/md5/82218de9291cfc215132168650b38ffa)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

@@ -1,6 +1,6 @@
 # Java 可扩展数据架构
 
-> 原文：[`zh.annas-archive.org/md5/579bef92b525a1e726e776ef1e76ea33`](https://zh.annas-archive.org/md5/579bef92b525a1e726e776ef1e76ea33)
+> 原文：[SCALABLE DATA ARCHITECTURE WITH JAVA : build efficient enterprise grade data architecting... solutions using java](https://zh.annas-archive.gl/md5/579bef92b525a1e726e776ef1e76ea33)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

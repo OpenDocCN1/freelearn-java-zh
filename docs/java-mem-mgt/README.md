@@ -1,6 +1,6 @@
 # Java 内存管理
 
-> 原文：[`zh.annas-archive.org/md5/3f85b308931766d8fe35b94d3ba2c698`](https://zh.annas-archive.org/md5/3f85b308931766d8fe35b94d3ba2c698)
+> 原文：[Java Memory Management](https://zh.annas-archive.gl/md5/3f85b308931766d8fe35b94d3ba2c698)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

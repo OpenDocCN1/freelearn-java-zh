@@ -1,6 +1,6 @@
 # ImageJ 图像处理
 
-> 原文：[`zh.annas-archive.org/md5/77fcea5d854e81569a81d3b0666cdf75`](https://zh.annas-archive.org/md5/77fcea5d854e81569a81d3b0666cdf75)
+> 原文：[Image Processing with ImageJ - Second Edition](https://zh.annas-archive.gl/md5/77fcea5d854e81569a81d3b0666cdf75)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 

@@ -1,6 +1,6 @@
 # Java11 快速启动指南
 
-> 原文：[`zh.annas-archive.org/md5/2871146470097edf311ff3f7f16c22d2`](https://zh.annas-archive.org/md5/2871146470097edf311ff3f7f16c22d2)
+> 原文：[Java 11 Quick Start](https://zh.annas-archive.gl/md5/2871146470097edf311ff3f7f16c22d2)
 > 
 > 译者：[飞龙](https://github.com/wizardforcel)
 > 
